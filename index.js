@@ -16,7 +16,7 @@ module.exports = function standardVersion (argv) {
 
   return Promise.resolve()
     .then(()=>{
-      return analyzeCommits();
+      return args.skipAnalyze||analyzeCommits();
     })
     .then(() => {
       return bump(args, pkg)
